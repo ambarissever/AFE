@@ -44,19 +44,6 @@ def decrypt_file(input_file, output_file, key):
 
     with open(output_file, 'wb') as file:
         file.write(unpadded_data)
-
-def show_example_key(key_size):
-    if key_size == 128:
-        example_key = os.urandom(16).hex()
-        return example_key
-    elif key_size == 192:
-        example_key = os.urandom(24).hex()
-        return example_key
-    elif key_size == 256:
-        example_key = os.urandom(32).hex()
-        return example_key
-    else:
-        print(f"Anahtar {key_size} bit olmalıdır.")
     
 def generate_key(key_size):
     return os.urandom(key_size // 8)
